@@ -12,7 +12,7 @@ Release **v2.0.0** combines the earlier performance and visual-update patches in
 - **Hidden Surgery Machine carousel:** avoid transform writes while previews are hidden, then catch up before showing them again. Visible animation, bounce, sound, and RNG behavior remain.
 - **Transition speed:** choose **1×, 2×, 3×, 4×, 8×, 16×, 32×, or 64×**. The menu and console command use the same choices. Existing animation mappings remain, so the selected number is not a literal multiplier for every animation.
 
-The user who tested these changes reported smoother gameplay and could no longer reproduce their original issue. **There is no measured FPS-gain claim, and not every possible late-game hitch has been ruled out.** See [validation and limitations](VALIDATION.md).
+I can confidently say that i have achieved smoother gameplay and could no longer reproduce my original issue. **There is no measured FPS-gain claim, and not every possible late-game hitch has been ruled out.** See [validation and limitations](VALIDATION.md).
 
 ## Install
 
