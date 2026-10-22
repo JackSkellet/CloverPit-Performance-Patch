@@ -4,13 +4,13 @@ I was getting uneven frame pacing in CloverPit, especially on more demanding run
 
 It reduces repeated data checks and enum formatting, cuts unnecessary work around pattern sorting, avoids rebuilding eligible plain-text meshes just to change opacity, and stops updating the hidden Surgery Machine carousel every frame. It also adds 8x, 16x, 32x and 64x transition-speed choices alongside the original 1x–4x options.
 
-The earlier patches are now combined into the v2.0.0 installer, with backups, verification and a restore command. It does not change boot.config or the save format.
+Everything installs through one tool, with backups, verification and a restore command. It does not change boot.config or the save format.
 
 [b]Source, downloads and instructions:[/b]
 [url=https://github.com/JackSkellet/CloverPit-Performance-Patch]CloverPit Performance Patch on GitHub[/url]
 
 It has felt smoother on my setup, and I haven't been able to reproduce my original issue since applying it. I don't have a measured FPS-gain figure, so I don't want to promise a specific improvement. The scoring-order and visual checks are documented in the repo.
 
-This currently targets Steam build 22785177 / Unity 6000.2.6f2. I've tested gameplay on Linux through Proton; Windows gameplay hasn't been tested yet. Close the game before installing or restoring, and don't force it onto a different game build or another modified assembly.
+This currently targets Steam build 22785177 / Unity 6000.2.6f2. I'm the only gameplay tester so far, on Linux through Proton; Windows gameplay hasn't been tested yet. Close the game before installing or restoring, and don't force it onto a different game build or another modified assembly.
 
 It's an unofficial mod, not a developer patch. If you try it, reports of your platform and any regressions would be useful.

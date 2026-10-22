@@ -2,7 +2,7 @@
 
 A reversible, unofficial patch for CloverPit that reduces repeated CPU work, avoids unnecessary text-mesh updates, and adds transition speeds up to **64×**.
 
-Release **v2.0.0** combines the earlier performance and visual-update patches into one installation. It targets **Steam build 22785177**, built with **Unity 6000.2.6f2**. The installer checks the game files before patching and refuses unsupported or unknown modified assemblies.
+All fixes install together in one step. The patch targets **Steam build 22785177**, built with **Unity 6000.2.6f2**. The installer checks the game files before patching and refuses unsupported or unknown modified assemblies.
 
 ## What changes
 
@@ -12,7 +12,7 @@ Release **v2.0.0** combines the earlier performance and visual-update patches in
 - **Hidden Surgery Machine carousel:** avoid transform writes while previews are hidden, then catch up before showing them again. Visible animation, bounce, sound, and RNG behavior remain.
 - **Transition speed:** choose **1×, 2×, 3×, 4×, 8×, 16×, 32×, or 64×**. The menu and console command use the same choices. Existing animation mappings remain, so the selected number is not a literal multiplier for every animation.
 
-I can confidently say that i have achieved smoother gameplay and could no longer reproduce my original issue. **There is no measured FPS-gain claim, and not every possible late-game hitch has been ruled out.** See [validation and limitations](VALIDATION.md).
+I can confidently say gameplay is smoother on my setup, and I can no longer reproduce my original issue. I’m the only gameplay tester so far, on Linux through Proton. I haven’t measured a controlled FPS gain. See [validation and limitations](VALIDATION.md).
 
 ## Install
 
@@ -33,7 +33,7 @@ chmod +x ./CloverPitPatch
 ./CloverPitPatch install "$HOME/.local/share/Steam/steamapps/common/CloverPit"
 ```
 
-Use your actual library path if it differs. If you have the earlier v1-only patch, restore the original game first. The final v2 patch is recognized as already installed; existing final-v2 users do not need to reinstall. The installer creates `CloverPitPerformancePatch-backup` inside the game folder and checks the installed result. Launch the game normally through Steam afterward. No extra Steam launch option is needed.
+Use your actual library path if it differs. The installer creates `CloverPitPerformancePatch-backup` inside the game folder and checks the installed result. Launch the game normally through Steam afterward. No extra Steam launch option is needed.
 
 ## Verify or restore
 
@@ -44,13 +44,13 @@ CloverPitPatch verify <game-directory>
 CloverPitPatch restore <game-directory>
 ```
 
-Use `./CloverPitPatch` on Linux or `.\CloverPitPatch.exe` in Windows PowerShell. Restoration returns the game assembly to the supported original build and preserves current save progress rather than rolling back to the installation-time save backup. It also recognizes a verified original backup from the earlier `CloverPitPatch-backup-v1` layout.
+Use `./CloverPitPatch` on Linux or `.\CloverPitPatch.exe` in Windows PowerShell. Restoration returns the game assembly to the supported original build and preserves current save progress rather than rolling back to the installation-time save backup.
 
 `boot.config`, Unity libraries, save formats, and existing saved options are not changed. Steam verification or a game update may replace patched assemblies. Restore before applying another binary mod; do not force this patch onto a different build.
 
 ## Compatibility and scope
 
-In-game testing was performed on **Linux through Proton**. Windows gameplay has **not** been tested. The Windows installer is a supported distribution target, not evidence that every Windows runtime combination has been verified.
+Automated tests and installer builds pass on Windows and Linux. **Windows gameplay has not been tested.**
 
 Active-pattern sorting still uses the original quadratic exchange ordering to preserve tie behavior. Pattern-containment checks and insertion scans remain. The patch reduces their surrounding work rather than claiming to replace the entire scoring system.
 
