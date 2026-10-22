@@ -58,7 +58,7 @@ SHA-256 identities used in that comparison:
 | Final-v2 game assembly | `8508cde02362bcc9ffe566a6b5fca9457e8f53d284f91c570e5c95a3f034040a` |
 | Final-v2 companion assembly | `4e10da52074c8f5e0e7293e297365816b1cc1dbd1baab3659fcafab45302e283` |
 
-Windows CI results are pending. **Windows gameplay remains untested.** A successful installer or algorithm test is not a Windows gameplay test.
+Both Windows x64 and Linux x64 passed the public algorithm suite, self-contained build, and CLI smoke checks in [GitHub Actions](https://github.com/JackSkellet/CloverPit-Performance-Patch/actions/runs/39706304311). The downloaded Linux CI artifact also passed install, verify, and exact-original restoration against a local game copy. **Windows gameplay remains untested.** A successful installer or algorithm test is not a Windows gameplay test.
 
 ## What the evidence supports
 
